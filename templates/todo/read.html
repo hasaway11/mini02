@@ -23,7 +23,12 @@
         <main>
             <aside>부가정보</aside>
             <section>
+            {# 이 부분은 주석입니다 #}
+            {# 완료/미완료에 따라 화면 디자인이 크게 다르다 #}
+            {# 완료 화면과 미완료 화면을 if로 처리 #}
+
             {% if todo.finish %}
+                {% 완료했을 때의 화면 %}
                 <div class="mt-3 mb-3">
                     <label for="date" class="form-lable">마감일:</label>
                     <input type="date" class="form-control" id="date" name="date" value="{{todo.deadline}}" disabled>
@@ -36,6 +41,7 @@
                     <textarea class="form-control" rows="5" id="content" name="content" disabled>{{todo.content}}</textarea>
                 </div>
             {% else %}
+                {% 미완료일 때의 화면 %}
                 <div class="mt-3 mb-3">
                     <label for="date" class="form-lable">마감일:</label>
                     <input type="date" class="form-control" id="date" name="date" value="{{todo.deadline}}">
